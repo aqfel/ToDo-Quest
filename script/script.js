@@ -8,45 +8,38 @@ var clearedTasks = 0;
 var requiredTasks = 1;
 var progress = 0;
 
-// Function to make the title editable
 function changeTitle(element) {
-    // Create an input field
     var input = document.createElement('input');
     input.type = 'text';
     input.value = element.innerText;
     input.classList.add('editable-input');
-    // Replace the text with the input field
+
     element.parentNode.replaceChild(input, element);
 
-    // Focus on the input field
     input.focus();
 
-    // When the Enter key is pressed, save the changes and revert to text
     input.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
-            saveTitle(input.value); // Save the title to local storage
+            saveTitle(input.value); 
             element.innerText = input.value;
-            input.blur(); // Remove focus from the input field
+            input.blur(); 
 
             loadTitle();
         }
     });
 
-    // When the input field loses focus, save the changes
     input.addEventListener('blur', function() {
-        saveTitle(input.value); // Save the title to local storage
+        saveTitle(input.value);
         element.innerText = input.value;
-
         loadTitle();
     });
 }
 
-// Function to save the title to local storage
+
 function saveTitle(title) {
     localStorage.setItem("pageTitle", title);
 }
 
-// Function to load the title from local storage
 function loadTitle() {
     var title = localStorage.getItem("pageTitle");
     if (title) {
@@ -54,10 +47,7 @@ function loadTitle() {
     }
 }
 
-// Call loadTitle function to load the title when the page loads
 loadTitle();
-
-
 
 function addTask() {
     if (inputBox.value === '') {
@@ -75,7 +65,6 @@ function addTask() {
             uncheckedList.insertBefore(li, uncheckedList.firstChild);
         }
     }
-
     inputBox.value = "";
     saveData();
 }
@@ -85,7 +74,6 @@ inputBox.addEventListener("keydown", function (e) {
         addTask();
     }
 });
-
 
 function handleTaskClick(e) {
     if (e.target.tagName === "LI") {
@@ -134,6 +122,9 @@ function updateLevel() {
         requiredTasks++;
         updateProgressBar();
         levelElement.innerHTML = level;
+        if (level === 1) {
+            alert("Du bist ein Level aufgestiegen!\nSchließe weitere Aufgaben ab, um mehr Erfahrungspunkte zu sammeln.");
+        }
     }
 }
 
@@ -141,6 +132,5 @@ function updateProgressBar() {
     var progress = clearedTasks / requiredTasks * 70;
     document.querySelector('.progress-bar').style.width = progress + '%'; 
 }
-
 showTask();
 //localStorage.clear();

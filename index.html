@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo Quest</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" type="image/x-icon" href="/img/icon.png">
 </head>
 <body>
 <div class="container">
     <div class="todo-app">
-        <h2 id="todo-header" onclick="changeTitle(this)">ToDo's</h2>
+        <div class="title">
+            <h2 id="todo-header" onclick="changeTitle(this)">ToDo's</h2>
+            <img src="img/pen.png" title="Bearbeiten" alt="Bearbeiten">
+        </div>
         <div class="row">
             <input type="text" id="input-box" placeholder="Was möchtest Du erledigen? ...">
             <button onclick="addTask()">Los!</button>
@@ -29,6 +33,6 @@
         </div>
     </div>
 </div>
-<script src="script.js"></script>
+<script src="/script/script.js"></script>
 </body>
 </html>
