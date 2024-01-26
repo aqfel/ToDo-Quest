@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <div class="todo-app">
-        <h2>ToDo's</h2>
+        <h2 id="todo-header" onclick="changeTitle(this)">ToDo's</h2>
         <div class="row">
             <input type="text" id="input-box" placeholder="Was möchtest Du erledigen? ...">
             <button onclick="addTask()">Los!</button>
@@ -21,6 +21,11 @@
         <div>
             <ul id="checked-list">
             </ul>
+        </div>
+    </div>
+    <div class="progress" title="ToDo's">
+        <h6>LVL</h6> <p class="level">0</p>
+        <div class="progress-bar">
         </div>
     </div>
 </div>

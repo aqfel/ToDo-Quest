@@ -14,7 +14,7 @@
     width: 100%;
     max-width: 540px;
     background: #eee;
-    margin: 10px auto 20px;
+    margin: 60px auto 20px;
     padding: 40px 30px 40px;
     border-radius: 20px;
 }
@@ -24,6 +24,16 @@
     align-items: center;
     margin-bottom: 20px;
     margin-left: 20px;
+}
+.editable-input{
+    color: #3b3b3b;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    font-size: 25px;
+    font-style: bold;
+    font-weight: 500;
 }
 .row{
     display: flex;
@@ -112,4 +122,47 @@ ul li span{
 ul li span:hover{
     background: #aaa;
     color: #eee;
+}
+.progress{
+    background: #ff5945;
+    opacity: .7;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: absolute;
+    right: 30px;
+    top: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .2s;
+}
+.progress:hover{
+    cursor: default;
+    opacity: 1;
+}
+.progress-bar{
+    background: #eee;
+    border: #2b2b2bb8;
+    border-style: solid;
+    border-width: 1.5px;
+    height: 7px;
+    width: 100px;
+    position: absolute;
+    left: 15%;
+    bottom: 25%;
+}
+.progress p{
+    color: #eee;
+    font-size: 3em;
+    font-weight: 300;
+}
+
+.progress h6{
+    color: #eee;
+    position: absolute;
+    left: 15%;
+    bottom: 32%;
+    font-weight: 300;
 }
