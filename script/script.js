@@ -142,4 +142,4 @@ function lvlUpAnimation() {
     }, 300); 
 }
 showTask();
-localStorage.clear();
+//localStorage.clear();
