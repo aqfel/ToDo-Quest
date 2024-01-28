@@ -5,7 +5,7 @@ var levelElement = document.querySelector('.level');
 
 var level = 0;
 var clearedTasks = 0;
-var requiredTasks = 1;
+var requiredTasks = 2;
 var progress = 0;
 
 function changeTitle(element) {
@@ -109,7 +109,7 @@ function showTask() {
     checkedList.innerHTML = localStorage.getItem("checkedData") || "";
     level = parseInt(localStorage.getItem("level")) || 0;
     clearedTasks = parseInt(localStorage.getItem("clearedTasks")) || 0;
-    requiredTasks = parseInt(localStorage.getItem("requiredTasks")) || 1;
+    requiredTasks = parseInt(localStorage.getItem("requiredTasks")) || 2;
     progress = parseFloat(localStorage.getItem("progress")) || 0;
     levelElement.innerHTML = level;
     updateProgressBar();
@@ -120,11 +120,12 @@ function updateLevel() {
         level++;
         clearedTasks = 0;
         requiredTasks++;
+        lvlUpAnimation();
         updateProgressBar();
         levelElement.innerHTML = level;
-        if (level === 1) {
-            alert("Du bist ein Level aufgestiegen!\nSchließe weitere Aufgaben ab, um mehr Erfahrungspunkte zu sammeln.");
-        }
+        // if (level === 1) {
+        //     alert("Du bist ein Level aufgestiegen!\nSchließe weitere Aufgaben ab, um mehr Erfahrungspunkte zu sammeln.");
+        // }
     }
 }
 
@@ -132,5 +133,13 @@ function updateProgressBar() {
     var progress = clearedTasks / requiredTasks * 70;
     document.querySelector('.progress-bar').style.width = progress + '%'; 
 }
+
+function lvlUpAnimation() {
+    var progress = document.querySelector('.progress');
+    progress.style.background = '#F8C471';
+    setTimeout(function() {
+        progress.style.background = '#F39C12';
+    }, 300); 
+}
 showTask();
-//localStorage.clear();
+localStorage.clear();
