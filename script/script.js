@@ -136,10 +136,10 @@ function updateProgressBar() {
 
 function lvlUpAnimation() {
     var progress = document.querySelector('.progress');
-    progress.style.background = '#F8C471';
+    progress.style.background = '#cc9ef9ff';
     setTimeout(function() {
-        progress.style.background = '#F39C12';
-    }, 300); 
+        progress.style.background = '#8c24f2ff';
+    }, 500); 
 }
 showTask();
 //localStorage.clear();

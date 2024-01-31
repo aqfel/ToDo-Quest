@@ -77,7 +77,7 @@ button{
     border: none;
     outline: none;
     padding: 16px 30px;
-    background: #F39C12;
+    background: #8c24f2ff;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
@@ -145,7 +145,7 @@ ul li span:hover{
     color: #eee;
 }
 .progress{
-    background: #F39C12;
+    background: #8c24f2ff;
     box-shadow: 0 0 15px 0 rgba(0,0,0,.25);
     opacity: .95;
     width: 120px;
